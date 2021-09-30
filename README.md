@@ -16,12 +16,12 @@ capacidade de se comunicar com o banco de dados mysql).
 3. Uma camada de Controller com o nome de CategoriaController Com 5
 endpoints:
 <ul>
-  <li>findAllCategoria = um endPoint com a capacidade de trazer todas as categorias.<\li>
+  <li>findAllCategoria = um endPoint com a capacidade de trazer todas as categorias.</li>
   <li>findByIDCategoria = um endPoint com a função de trazer uma única categoria por id.</li>
-  <li>findByDescricaoCategoria = um endPoint com a função de trazer uma categoria turma por Descricao.<\li>
-  <li>postCategoria = um endPoint com a função de gravar uma nova categoria no banco de dados.<\li>
-  <li> putCategoria = um endPoint com a função de atualizar dados de uma categoria.<\li>
-  <li>deleteCategoria = um endPoint com a função de apagar uma categoria dobanco de dados).<\li>
+  <li>findByDescricaoCategoria = um endPoint com a função de trazer uma categoria turma por Descricao.</li>
+  <li>postCategoria = um endPoint com a função de gravar uma nova categoria no banco de dados.</li>
+  <li> putCategoria = um endPoint com a função de atualizar dados de uma categoria.</li>
+  <li>deleteCategoria = um endPoint com a função de apagar uma categoria dobanco de dados).</li>
 </ul>
 
 ## Parte 2 relacionamento com a tabela Produto.
@@ -32,7 +32,7 @@ IMPORTANTE: Não esqueça de colocar as anotações corretamente para o relacion
 4. Uma camada de repository com o nome ProdutoRepository (com a capacidade de se comunicar com o banco de dados mysql).
 5. Uma camada de Controller com o nome de ProdutoController Com 5  endpoints:
 <ul>
-  <li>findAllProduto = um endPoint com a capacidade de trazer todos os Produtos .<\li>
+  <li>findAllProduto = um endPoint com a capacidade de trazer todos os Produtos .</li>
   <li>findByIDProduto = um endPoint com a função de trazer uma único Produto por id.</li>
   <li>findByDescricaoTitulo = um endPoint com a função de trazer um único Produto por Titulo.</li>
   <li>postProduto = um endPoint com a função de gravar um novo Produto no banco de dados.</li>
@@ -53,28 +53,28 @@ IMPORTANTE: Não esqueça de colocar as anotações corretamente para o relacion
 
 
 <ol>
-  <li>End-point getAllCategoria : ("/") //Traz todos as categorias do banco de dados<\li>
-  <li>End-point getByIdCategoria : ("/{id}") retorna a categoria cadastrada de acordo com o {id}<\li>
-  <li>End-point getAllContainingCategoria : ("/listcategoria/{categoria}") //Filtra o retorno de acordo com o {categoria}<\li>
-  <li>End-point getAllContaingPlataforma : ("/plataforma/{plataforma}") //Filtra o retorno de acordo com o  {plataforma}<\li>
-  <li>End-point getAllContainingPlataforma : ("/distribuidora/{distribuidora}") //Filtra o retorno de acordo com o {distribuidora}<\li>
+  <li>End-point getAllCategoria : ("/") //Traz todos as categorias do banco de dados</li>
+  <li>End-point getByIdCategoria : ("/{id}") retorna a categoria cadastrada de acordo com o {id}</li>
+  <li>End-point getAllContainingCategoria : ("/listcategoria/{categoria}") //Filtra o retorno de acordo com o {categoria}</li>
+  <li>End-point getAllContaingPlataforma : ("/plataforma/{plataforma}") //Filtra o retorno de acordo com o  {plataforma}</li>
+  <li>End-point getAllContainingPlataforma : ("/distribuidora/{distribuidora}") //Filtra o retorno de acordo com o {distribuidora}</li>
   <li>End-point postCategoria : ("/") //Irá inserir uma nova categoria no banco de dados, passando o Json pelo corpo da requisição.
-      exemplo json : { "distribuidora": "KONAMI","plataforma":"'PS4-XBOX-SWITCH'","categoria":"EASPORTS"}<\li>
+      exemplo json : { "distribuidora": "KONAMI","plataforma":"'PS4-XBOX-SWITCH'","categoria":"EASPORTS"}</li>
   <li> End-point putCategoria : ("/") //Irá atualizar uma categoria já existente passando um arquivo .json no corpo da requisição .
-      exemplo Json : {"id": 2,"distribuidora": "KONAMI","plataforma":"'PS4-XBOX-SWITCH'","categoria":"EASPORTS"<\li>
-   <li>End-point deleteCategoria : ("/{id}") //irá excluir a categoria do banco de dados pelo {id}<\li>
+      exemplo Json : {"id": 2,"distribuidora": "KONAMI","plataforma":"'PS4-XBOX-SWITCH'","categoria":"EASPORTS"</li>
+   <li>End-point deleteCategoria : ("/{id}") //irá excluir a categoria do banco de dados pelo {id}</li>
 </ol>
      
 ## Parte 2 - Produtos
 ### End-point Padrão ("/produto")
      
 <ol>
-  <li>End-point getAllProdutos : ("/") //Traz todos os produtos cadastrados <\li>
+  <li>End-point getAllProdutos : ("/") //Traz todos os produtos cadastrados </li>
   <li>End-point getProdutoById : ("/{id}") <\li>// Retorna o produto pelo {id}
-  <li>End-point getAllProdutoContaining : ("/filter/{produto}") //Filtra o retorno de acordo com o {produto} <\li>
-  <li>End-point postProduto : ("/") //Irá inserir uma novo produto no banco de dados, passando o Json pelo corpo da requisição. exemplo:  { "produto": "Horizon zero down", "preco": 250.0,"estoqueProduto": 0 }<\li>
-  <li>End-point putProduto : ("/") //Irá atualizar uma categoria já existente passando um arquivo .json no corpo da requisição. exemplo:  { "id" : 1, "produto": "Horizon zero down", "preco": 250.0,"estoqueProduto": 0 } <\li>
-  <li>End-point deleteProduto : ("/{id}") //irá excluir o produto do banco de dados pelo {id}<\li>
-  <li>End-point getProdutosEstoquePositivo : ("/estoque/positivo") //Irá retornar os produtos com estoque > 0<\li>
-  <li>End-point getProdutosEstoqueNegativo : ("/estoque/negativo") //Irá retornar os produtos com estoque <=0<\li>
+  <li>End-point getAllProdutoContaining : ("/filter/{produto}") //Filtra o retorno de acordo com o {produto} </li>
+  <li>End-point postProduto : ("/") //Irá inserir uma novo produto no banco de dados, passando o Json pelo corpo da requisição. exemplo:  { "produto": "Horizon zero down", "preco": 250.0,"estoqueProduto": 0 }</li>
+  <li>End-point putProduto : ("/") //Irá atualizar uma categoria já existente passando um arquivo .json no corpo da requisição. exemplo:  { "id" : 1, "produto": "Horizon zero down", "preco": 250.0,"estoqueProduto": 0 } </li>
+  <li>End-point deleteProduto : ("/{id}") //irá excluir o produto do banco de dados pelo {id}</li>
+  <li>End-point getProdutosEstoquePositivo : ("/estoque/positivo") //Irá retornar os produtos com estoque > 0</li>
+  <li>End-point getProdutosEstoqueNegativo : ("/estoque/negativo") //Irá retornar os produtos com estoque <=0</li>
 <\ol>
