@@ -64,5 +64,17 @@ IMPORTANTE: Não esqueça de colocar as anotações corretamente para o relacion
       exemplo Json : {"id": 2,"distribuidora": "KONAMI","plataforma":"'PS4-XBOX-SWITCH'","categoria":"EASPORTS"<\li>
    <li>End-point deleteCategoria : ("/{id}") //irá excluir a categoria do banco de dados pelo {id}<\li>
 </ol>
-
-
+     
+## Parte 2 - Produtos
+### End-point Padrão ("/produto")
+     
+<ol>
+  <li>End-point getAllProdutos : ("/") //Traz todos os produtos cadastrados <\li>
+  <li>End-point getProdutoById : ("/{id}") <\li>// Retorna o produto pelo {id}
+  <li>End-point getAllProdutoContaining : ("/filter/{produto}") //Filtra o retorno de acordo com o {produto} <\li>
+  <li>End-point postProduto : ("/") //Irá inserir uma novo produto no banco de dados, passando o Json pelo corpo da requisição. exemplo:  { "produto": "Horizon zero down", "preco": 250.0,"estoqueProduto": 0 }<\li>
+  <li>End-point putProduto : ("/") //Irá atualizar uma categoria já existente passando um arquivo .json no corpo da requisição. exemplo:  { "id" : 1, "produto": "Horizon zero down", "preco": 250.0,"estoqueProduto": 0 } <\li>
+  <li>End-point deleteProduto : ("/{id}") //irá excluir o produto do banco de dados pelo {id}<\li>
+  <li>End-point getProdutosEstoquePositivo : ("/estoque/positivo") //Irá retornar os produtos com estoque > 0<\li>
+  <li>End-point getProdutosEstoqueNegativo : ("/estoque/negativo") //Irá retornar os produtos com estoque <=0<\li>
+<\ol>
