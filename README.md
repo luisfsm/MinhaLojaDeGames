@@ -40,3 +40,35 @@ IMPORTANTE: Não esqueça de colocar as anotações corretamente para o relacion
   <li>deleteProduto = um endPoint com a função de apagar um Produto do banco de dados).
 </li>
 </ul>
+
+## Resolução 
+<ul>
+  <li>Scrpt Sql caso queira ter um banco de dados populado . <a href="https://github.com/luisfsm/MinhaLojaDeGames/tree/master/Back-end/Scripts_sql"> Click aqui </a> </li>
+  <li>Arquivo Json para o Postman com os request Methods da Api. <a href="https://github.com/luisfsm/MinhaLojaDeGames/tree/master/Back-end/postman_config"> Click aqui </a>  </li>
+</ul>
+
+## Parte 1 - Categoria
+
+### End-point Padrão ("/categoria")
+
+1 º End-point getAllCategoria : ("/") //Traz todos as categorias do banco de dados
+2 º End-point getByIdCategoria : ("/{id}") retorna a categoria cadastrada de acordo com o {id}
+3 º End-point getAllContainingCategoria : ("/listcategoria/{categoria}") //Filtra o retorno de acordo com o {categoria}
+4 º End-point getAllContaingPlataforma : ("/plataforma/{plataforma}") //Filtra o retorno de acordo com o  {plataforma}
+5 º End-point getAllContainingPlataforma : ("/distribuidora/{distribuidora}") //Filtra o retorno de acordo com o {distribuidora}
+6 º End-point postCategoria : ("/") //Irá inserir uma nova categoria no banco de dados, passando o Json pelo corpo da requisição.
+exemplo json : {
+    "distribuidora": "KONAMI",
+    "plataforma":"'PS4-XBOX-SWITCH'",
+    "categoria":"EASPORTS"    
+}
+
+7 º End-point putCategoria : ("/") //Irá atualizar uma categoria já existente passando um arquivo .json no corpo da requisição .
+exemplo Json : {
+    "id": 2,
+    "distribuidora": "KONAMI",
+    "plataforma":"'PS4-XBOX-SWITCH'",
+    "categoria":"EASPORTS"    
+}
+8 º End-point deleteCategoria : ("/{id}") //irá excluir a categoria do banco de dados pelo {id}
+
