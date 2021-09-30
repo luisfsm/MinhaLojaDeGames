@@ -27,9 +27,10 @@ banco de dados.
 categoria.
 ● deleteCategoria = um endPoint com a função de apagar uma categoria do
 banco de dados).
+<\br>
 Parte 2 relacionamento com a tabela Produto.
 1. Camada de model com o nome de Produto com os seus atributos.
-5. Crie um relacionamento de um para muitos/muitos para um, para essas
+2. Crie um relacionamento de um para muitos/muitos para um, para essas
 models (uma categoria para muitos produtos e muitos produtos para uma
 categoria)
 IMPORTANTE: Não esqueça de colocar as anotações corretamente para o
