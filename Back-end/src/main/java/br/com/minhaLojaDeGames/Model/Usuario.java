@@ -20,7 +20,11 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
+	
+	@NotBlank
+	@Size(min =3)
+	private String nome;
 	
 	@NotBlank
 	@Size(min =3)
@@ -34,16 +38,46 @@ public class Usuario {
 	@JsonIgnoreProperties("usuarios")
 	private List<ProdutoModel> produtos;
 
-	public int getId() {
+	
+	public Usuario() {
+		
+	}
+	
+	
+	
+	public Usuario(long  id,  String nome,String usuario,	String senha) {
+		this.id =  id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+	
+	
+	
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+
+
+	public void setId(long id) {
 		this.id = id;
 	}
 
+
+
 	public String getUsuario() {
 		return usuario;
+	}
+
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public void setUsuario(String usuario) {

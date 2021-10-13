@@ -1,6 +1,7 @@
 package br.com.minhaLojaDeGames.service;
 
 import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
@@ -18,13 +19,23 @@ public class UsuarioService {
 	@Autowired
 	UsuarioRepository repository;
 	
+	public List<Usuario> listarUsuarios(){
+
+		return repository.findAll();
+
+	}
 	
-	public Usuario cadastrarUsuario(Usuario usuario) {
-		BCryptPasswordEncoder enconder = new BCryptPasswordEncoder();
-		String senhaEnconder = enconder.encode(usuario.getSenha());
-		usuario.setSenha(senhaEnconder);
+	
+	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
+		if (repository.findByUsuario(usuario.getUsuario()).isPresent())
+			return Optional.empty();
 		
-		return repository.save(usuario); 
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+		String senhaEncoder = encoder.encode(usuario.getSenha());
+		usuario.setSenha(senhaEncoder);
+
+		return Optional.of(repository.save(usuario));
 	}
 	
 	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user){
@@ -37,13 +48,16 @@ public class UsuarioService {
 				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic "+new String(encodeAuth);
 				
+				user.get().setId(usuario.get().getId());
+				user.get().setNome(usuario.get().getNome());
+				user.get().setSenha(usuario.get().getSenha());
 				user.get().setToken(authHeader);
-				user.get().setUsuario(usuario.get().getUsuario());
+
 				return user;
 			}
 		}
 		
-		return null;
+		return Optional.empty();
 	}
 	
 	

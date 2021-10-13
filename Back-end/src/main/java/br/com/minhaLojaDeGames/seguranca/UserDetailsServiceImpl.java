@@ -14,16 +14,16 @@ import br.com.minhaLojaDeGames.Repository.UsuarioRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+
 	@Autowired
-	UsuarioRepository usuarioRepository;
-	
+	private UsuarioRepository userRepository;
+
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException  {
-		Optional<Usuario> user = usuarioRepository.findByUsuario(userName);
-		user.orElseThrow(() -> new UsernameNotFoundException(userName + " not found"));
-		return user.map(UserDetailsImpl::new).get();
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+
+		Optional<Usuario> usuario = userRepository.findByUsuario(userName);
+		usuario.orElseThrow(() -> new UsernameNotFoundException(userName + " not found."));
+
+		return usuario.map(UserDetailsImpl::new).get();
 	}
-
-
 }
